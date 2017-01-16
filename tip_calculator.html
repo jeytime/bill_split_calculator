@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Hourly Rate Calculator</title>
+<title>Test</title>
 </head>
 
 
@@ -14,33 +14,44 @@
 
 <script>
 
-	function tipcalc(bill, people){
-	
-	var bill = parseFloat(prompt("What's the bill total?",""),10);
-	var people = parseInt(prompt("How many people are going to split the bill?",""),10);
-	
-		document.write("Total Bill: £"+bill+"     Split between: "+ people+"<br /><br /><br />");
-	
-	var percent = [0, .1, .125, .15]
-	
+	var x = parseInt(prompt("Bill",""));
+	var y = parseInt(prompt("People",""));
 		
-			for (counter = 0; counter <=3; counter++){
-			var split = bill/people;
-			var tip = split*percent[counter];
-			var total = split+tip;
-				
-
-				
-	document.write("<br /><br />"+(100*percent[counter]) + "% tip equals £" + total+ " per person.  The total tip will be £" + (tip*people)+ " and the total bill will be £"+ (total*people));
+	
+	
+	
+	function test(){
+	r = [0,.1,.125,.15];
 		
+		document.write("Bill of "
+					   + x
+					   + " for "
+					   + y
+					   + " people. <br />"
+					     );
 		
-	}
+		for (c=0;c<=3;c++){
+		
+		z = x/y; //bill per person without tip
+		rz = (z*r[c])+z; // bill perperson + tip
+		
+			
+		document.write("<br /><br />"
+					   + (r[c]*100)
+					   + "% tip =  "
+					   + rz
+					   + " per person. (Total bill = "
+					   + (rz*y)
+					   + " total tip = "
+					   + (z*r[c])*y
+					   + " Indiv tip = "
+					   + z*r[c]
+					   + ")"
+					     );
 		}
+	}
 	
-	tipcalc();
-
-		
-	
+	test();
 	
 </script>
 </body>
