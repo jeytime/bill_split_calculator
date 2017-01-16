@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hourly Rate Calculator</title>
+</head>
+
+
+
+
+<body>
+
+
+
+<script>
+
+	function tipcalc(bill, people){
+	
+	var bill = parseFloat(prompt("What's the bill total?",""),10);
+	var people = parseInt(prompt("How many people are going to split the bill?",""),10);
+	
+		document.write("Total Bill: £"+bill+"     Split between: "+ people+"<br /><br /><br />");
+	
+	var percent = [0, .1, .125, .15]
+	
+		
+			for (counter = 0; counter <=3; counter++){
+			var split = bill/people;
+			var tip = split*percent[counter];
+			var total = split+tip;
+				
+
+				
+	document.write("<br /><br />"+(100*percent[counter]) + "% tip equals £" + total+ " per person.  The total tip will be £" + (tip*people)+ " and the total bill will be £"+ (total*people));
+		
+		
+	}
+		}
+	
+	tipcalc();
+
+		
+	
+	
+</script>
+</body>
+</html>
